@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(s -> System.out.println(s)
                         , t -> System.out.println(t.getMessage()));
 
-        new Thread(()->getUserOnServer()).start();
+        new Thread(()->runOnUiThread(()-> btnSend.setText("TESTE"))).start();
 
     }
 
